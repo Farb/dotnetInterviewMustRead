@@ -22,14 +22,15 @@
 
 ## 依赖注入DI/IoC
 
-    调用者自己不创建依赖，由第三者容器创建并提供依赖的过程叫做依赖注入。
+调用者自己不创建依赖，由第三者容器创建并提供依赖的过程叫做依赖注入。
 
-    容器：容器负责两件事情：
-	1. 绑定服务与实例之间的关系
-	2. 获取实例，并对实例进行管理（创建与销毁）
-    常用的DI容器有，Autofac,Unity,StructureMap,.Net Core中自带的DI容器ServiceCollection订等等。
+容器：容器负责两件事情：
+1. 绑定服务与实例之间的关系
+2. 获取实例，并对实例进行管理（创建与销毁）
 
-    一般来说，容器为我们提供的实例生命周期包括三种：
-    1. Transient： 每一次GetService都会创建一个新的实例
-	2. Scoped：  在同一个Scope内只初始化一个实例 ，可以理解为（ 每一个request级别只创建一个实例，同一个http request会在一个 scope内）
-	3. Singleton ：整个应用程序生命周期以内只创建一个实例 
+常用的DI容器有，Autofac,Unity,StructureMap,.Net Core中自带的DI容器ServiceCollection订等等。
+
+一般来说，容器为我们提供的实例生命周期包括三种：
+1. Transient： 每一次GetService都会创建一个新的实例
+2. Scoped：  在同一个Scope内只初始化一个实例 ，可以理解为（ 每一个request级别只创建一个实例，同一个http request会在一个 scope内）
+3. Singleton ：整个应用程序生命周期以内只创建一个实例 
