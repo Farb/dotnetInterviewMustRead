@@ -86,3 +86,30 @@
 2. 数据量少的字段不需要加索引；因为建索引有一定开销，如果数据量小则没必要建索引（速度反而慢） 
 3. 避免在where子句中使用or来连接条件,因为如果俩个字段中有一个没有索引的话,引擎会放弃索引而产生全表扫描 
 4. 联合索引比对每个列分别建索引更有优势，因为索引建立得越多就越占磁盘空间，在更新数据的时候速度会更慢。另外建立多列索引时，顺序也是需要注意的，应该将严格的索引放在前面，这样筛选的粒度会更大，效率更高。
+
+## 被问到的高频SQL语句
+
+**在Customer表（Id，UserName）中，删除同名的数据，仅保留Id最小的一条数据。**
+
+```
+      --思路分析如下：
+      --1.找出重复的Name
+      select Username  from Customer GROUP BY Username HAVING COUNT(*)>1;
+      --2.找出重复Name所在行的Id
+      select Id from Customer where Username in (
+      select Username  from Customer GROUP BY Username HAVING COUNT(*)>1
+      );
+      --3.找到重复Name行最小的Id
+      select Min(Id)  from Customer GROUP BY Username HAVING COUNT(*)>1;
+      --4.删除其他数据，保留最小的Id所在行数据
+      --所以最终结果如下：
+      delete from Customer where
+      Id in (
+                  select Id from Customer where Username in (
+                           select Username  from Customer GROUP BY Username HAVING COUNT(*)>1
+                           )
+               )
+      and Id not in(
+         select Min(Id)  from Customer GROUP BY Username HAVING COUNT(*)>1
+      );
+```
