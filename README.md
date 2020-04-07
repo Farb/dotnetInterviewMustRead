@@ -12,3 +12,5 @@ As a dotnet developer,you must read the hand book before the interview.
 
 ## [JavaScript知识(.JavaScript Knowledge)](https://github.com/Farb/dotnetInterviewMustRead/blob/master/JavaScript.md)
 
+## [设计模式(Design Pattern)](https://github.com/Farb/dotnetInterviewMustRead/blob/master/DesignPattern.md)
+
