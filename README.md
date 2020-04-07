@@ -14,3 +14,5 @@ As a dotnet developer,you must read the hand book before the interview.
 
 ## [设计模式(Design Pattern)](https://github.com/Farb/dotnetInterviewMustRead/blob/master/DesignPattern.md)
 
+## [算法(Algorithm)](https://github.com/Farb/dotnetInterviewMustRead/blob/master/Algorithm.md)
+
