@@ -16,3 +16,5 @@ As a dotnet developer,you must read the hand book before the interview.
 
 ## [算法(Algorithm)](https://github.com/Farb/dotnetInterviewMustRead/blob/master/Algorithm.md)
 
+## [Linux](https://github.com/Farb/dotnetInterviewMustRead/blob/master/LinuxBasic.md)
+
