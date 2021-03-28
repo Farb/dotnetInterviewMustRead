@@ -18,3 +18,4 @@ As a dotnet developer,you must read the hand book before the interview.
 
 ## [Linux](https://github.com/Farb/dotnetInterviewMustRead/blob/master/LinuxBasic.md)
 
+## [非技术(NonTechnology)](https://github.com/Farb/dotnetInterviewMustRead/blob/master/NonTechnology.md)
